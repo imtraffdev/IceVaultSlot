@@ -1,0 +1,365 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7A1200017A1200017A120001 /* IceVaultSlotApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1000017A1000017A100001 /* IceVaultSlotApp.swift */; };
+		7A1200027A1200027A120002 /* IceVaultModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1000027A1000027A100002 /* IceVaultModels.swift */; };
+		7A1200037A1200037A120003 /* IceVaultStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1000037A1000037A100003 /* IceVaultStorage.swift */; };
+		7A1200047A1200047A120004 /* IceVaultSignalGate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1000047A1000047A100004 /* IceVaultSignalGate.swift */; };
+		7A1200057A1200057A120005 /* IceVaultOnlinePassage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1000057A1000057A100005 /* IceVaultOnlinePassage.swift */; };
+		7A1200067A1200067A120006 /* IceVaultTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1000067A1000067A100006 /* IceVaultTheme.swift */; };
+		7A1200077A1200077A120007 /* IceVaultComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1000077A1000077A100007 /* IceVaultComponents.swift */; };
+		7A1200087A1200087A120008 /* IceVaultExperience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1000087A1000087A100008 /* IceVaultExperience.swift */; };
+		7A1200097A1200097A120009 /* IceVaultArrivalStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1000097A1000097A100009 /* IceVaultArrivalStage.swift */; };
+		7A1200107A1200107A120010 /* IceVaultOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1000107A1000107A100010 /* IceVaultOrientation.swift */; };
+		7A1200117A1200117A120011 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A1000117A1000117A100011 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7A1000017A1000017A100001 /* IceVaultSlotApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IceVaultSlotApp.swift; sourceTree = "<group>"; };
+		7A1000027A1000027A100002 /* IceVaultModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IceVaultModels.swift; sourceTree = "<group>"; };
+		7A1000037A1000037A100003 /* IceVaultStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IceVaultStorage.swift; sourceTree = "<group>"; };
+		7A1000047A1000047A100004 /* IceVaultSignalGate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IceVaultSignalGate.swift; sourceTree = "<group>"; };
+		7A1000057A1000057A100005 /* IceVaultOnlinePassage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IceVaultOnlinePassage.swift; sourceTree = "<group>"; };
+		7A1000067A1000067A100006 /* IceVaultTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IceVaultTheme.swift; sourceTree = "<group>"; };
+		7A1000077A1000077A100007 /* IceVaultComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IceVaultComponents.swift; sourceTree = "<group>"; };
+		7A1000087A1000087A100008 /* IceVaultExperience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IceVaultExperience.swift; sourceTree = "<group>"; };
+		7A1000097A1000097A100009 /* IceVaultArrivalStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IceVaultArrivalStage.swift; sourceTree = "<group>"; };
+		7A1000107A1000107A100010 /* IceVaultOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IceVaultOrientation.swift; sourceTree = "<group>"; };
+		7A1000117A1000117A100011 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7A1000127A1000127A100012 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A1000137A1000137A100013 /* IceVaultSlot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IceVaultSlot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7A1300017A1300017A130001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7A1400017A1400017A140001 = {
+			isa = PBXGroup;
+			children = (
+				7A1400027A1400027A140002 /* IceVaultSlot */,
+				7A1400037A1400037A140003 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7A1400027A1400027A140002 /* IceVaultSlot */ = {
+			isa = PBXGroup;
+			children = (
+				7A1000017A1000017A100001 /* IceVaultSlotApp.swift */,
+				7A1000027A1000027A100002 /* IceVaultModels.swift */,
+				7A1000037A1000037A100003 /* IceVaultStorage.swift */,
+				7A1000047A1000047A100004 /* IceVaultSignalGate.swift */,
+				7A1000057A1000057A100005 /* IceVaultOnlinePassage.swift */,
+				7A1000067A1000067A100006 /* IceVaultTheme.swift */,
+				7A1000077A1000077A100007 /* IceVaultComponents.swift */,
+				7A1000087A1000087A100008 /* IceVaultExperience.swift */,
+				7A1000097A1000097A100009 /* IceVaultArrivalStage.swift */,
+				7A1000107A1000107A100010 /* IceVaultOrientation.swift */,
+				7A1000127A1000127A100012 /* Info.plist */,
+				7A1000117A1000117A100011 /* Assets.xcassets */,
+			);
+			path = IceVaultSlot;
+			sourceTree = "<group>";
+		};
+		7A1400037A1400037A140003 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7A1000137A1000137A100013 /* IceVaultSlot.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7A1100017A1100017A110001 /* IceVaultSlot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7A1900027A1900027A190002 /* Build configuration list for PBXNativeTarget "IceVaultSlot" */;
+			buildPhases = (
+				7A1500017A1500017A150001 /* Sources */,
+				7A1300017A1300017A130001 /* Frameworks */,
+				7A1600017A1600017A160001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IceVaultSlot;
+			productName = IceVaultSlot;
+			productReference = 7A1000137A1000137A100013 /* IceVaultSlot.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7A1700017A1700017A170001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 2620;
+				TargetAttributes = {
+					7A1100017A1100017A110001 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+				};
+			};
+			buildConfigurationList = 7A1900017A1900017A190001 /* Build configuration list for PBXProject "IceVaultSlot" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7A1400017A1400017A140001;
+			productRefGroup = 7A1400037A1400037A140003 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7A1100017A1100017A110001 /* IceVaultSlot */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7A1600017A1600017A160001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A1200117A1200117A120011 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7A1500017A1500017A150001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A1200017A1200017A120001 /* IceVaultSlotApp.swift in Sources */,
+				7A1200027A1200027A120002 /* IceVaultModels.swift in Sources */,
+				7A1200037A1200037A120003 /* IceVaultStorage.swift in Sources */,
+				7A1200047A1200047A120004 /* IceVaultSignalGate.swift in Sources */,
+				7A1200057A1200057A120005 /* IceVaultOnlinePassage.swift in Sources */,
+				7A1200067A1200067A120006 /* IceVaultTheme.swift in Sources */,
+				7A1200077A1200077A120007 /* IceVaultComponents.swift in Sources */,
+				7A1200087A1200087A120008 /* IceVaultExperience.swift in Sources */,
+				7A1200097A1200097A120009 /* IceVaultArrivalStage.swift in Sources */,
+				7A1200107A1200107A120010 /* IceVaultOrientation.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		7A1800017A1800017A180001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7A1800027A1800027A180002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7A1800037A1800037A180003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = IceVaultSlot/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Ice Vault Slot";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.icevaultapp.game;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		7A1800047A1800047A180004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = IceVaultSlot/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Ice Vault Slot";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.icevaultapp.game;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7A1900017A1900017A190001 /* Build configuration list for PBXProject "IceVaultSlot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A1800017A1800017A180001 /* Debug */,
+				7A1800027A1800027A180002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7A1900027A1900027A190002 /* Build configuration list for PBXNativeTarget "IceVaultSlot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A1800037A1800037A180003 /* Debug */,
+				7A1800047A1800047A180004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7A1700017A1700017A170001 /* Project object */;
+}
