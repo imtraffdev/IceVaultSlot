@@ -21,6 +21,107 @@ enum IceVaultTab: String, CaseIterable, Identifiable {
     }
 }
 
+enum IceVaultQuickTemplate: String, CaseIterable, Identifiable {
+    case meeting = "Meeting Notes"
+    case travel = "Travel Plan"
+    case journal = "Daily Journal"
+    case content = "Content Idea"
+    case workout = "Workout Checklist"
+
+    var id: String { rawValue }
+
+    var symbol: String {
+        switch self {
+        case .meeting: "person.2.fill"
+        case .travel: "airplane.departure"
+        case .journal: "book.closed.fill"
+        case .content: "play.rectangle.fill"
+        case .workout: "figure.run"
+        }
+    }
+
+    var tint: Color {
+        switch self {
+        case .meeting: .indigo
+        case .travel: .cyan
+        case .journal: .purple
+        case .content: .pink
+        case .workout: .green
+        }
+    }
+
+    var vaultName: String {
+        switch self {
+        case .meeting: "Work"
+        case .travel: "Travel"
+        case .journal: "Journal"
+        case .content: "Content"
+        case .workout: "Fitness"
+        }
+    }
+
+    var tags: [String] {
+        switch self {
+        case .meeting: ["meeting", "work"]
+        case .travel: ["travel", "planning"]
+        case .journal: ["journal", "reflection"]
+        case .content: ["content", "ideas"]
+        case .workout: ["fitness", "routine"]
+        }
+    }
+
+    var noteType: IceVaultNoteType {
+        switch self {
+        case .journal, .meeting: .mixed
+        case .travel, .content, .workout: .checklist
+        }
+    }
+
+    var title: String {
+        switch self {
+        case .meeting: "Meeting notes"
+        case .travel: "Trip plan"
+        case .journal: "Daily journal"
+        case .content: "Content idea"
+        case .workout: "Workout plan"
+        }
+    }
+
+    var body: String {
+        switch self {
+        case .meeting:
+            return "Topic:\nAttendees:\nDecisions:\nOpen questions:"
+        case .travel:
+            return "Destination:\nDates:\nBudget:\nPlaces to save:"
+        case .journal:
+            return "Today I noticed:\nWhat felt clear:\nWhat I want to remember:"
+        case .content:
+            return "Hook:\nAudience:\nCore idea:\nCTA:"
+        case .workout:
+            return "Focus:\nWarmup:\nMain work:\nCooldown:"
+        }
+    }
+
+    var checklistItems: [IceVaultChecklistItem] {
+        let items: [String]
+        switch self {
+        case .meeting:
+            items = ["Capture action items", "Assign owners", "Set follow-up date"]
+        case .travel:
+            items = ["Book transport", "Save hotel details", "Pack essentials", "Download offline map"]
+        case .journal:
+            items = ["Write one win", "Name one lesson", "Choose tomorrow's focus"]
+        case .content:
+            items = ["Draft outline", "Add visual idea", "Write first version", "Schedule publish"]
+        case .workout:
+            items = ["Warm up", "Main set", "Stretch", "Log how it felt"]
+        }
+        return items.enumerated().map { index, text in
+            IceVaultChecklistItem(text: text, isCompleted: false, order: index)
+        }
+    }
+}
+
 struct IceVaultExperience: View {
     @EnvironmentObject private var store: IceVaultStore
     @StateObject private var authenticator = IceVaultAuthenticator()
@@ -40,7 +141,7 @@ struct IceVaultExperience: View {
                 .tabItem { Label(IceVaultTab.vaults.rawValue, systemImage: IceVaultTab.vaults.symbol) }
                 .tag(IceVaultTab.vaults)
 
-            IceVaultActionView(openEditor: openEditor, quickCreate: quickCreate, unlockSecureVault: unlockSecureVault)
+            IceVaultActionView(openEditor: openEditor, quickCreate: quickCreate, quickTemplate: quickTemplate, unlockSecureVault: unlockSecureVault)
                 .tabItem { Label(IceVaultTab.create.rawValue, systemImage: IceVaultTab.create.symbol) }
                 .tag(IceVaultTab.create)
 
@@ -102,6 +203,25 @@ struct IceVaultExperience: View {
             isSecure: false,
             reminderDate: nil,
             checklistItems: checklist
+        )
+    }
+
+    private func quickTemplate(_ template: IceVaultQuickTemplate) {
+        let vaultId = store.vaults.first {
+            $0.name.localizedCaseInsensitiveCompare(template.vaultName) == .orderedSame
+        }?.id ?? store.defaultVaultId()
+
+        editorNote = IceVaultNote(
+            title: template.title,
+            body: template.body,
+            type: template.noteType,
+            vaultId: vaultId,
+            tags: template.tags,
+            isPinned: false,
+            isStarred: false,
+            isSecure: false,
+            reminderDate: nil,
+            checklistItems: template.checklistItems
         )
     }
 
@@ -448,6 +568,7 @@ struct IceVaultActionView: View {
     @EnvironmentObject private var store: IceVaultStore
     var openEditor: (IceVaultNote) -> Void
     var quickCreate: (IceVaultNoteType) -> Void
+    var quickTemplate: (IceVaultQuickTemplate) -> Void
     var unlockSecureVault: () -> Void
 
     var body: some View {
@@ -463,6 +584,7 @@ struct IceVaultActionView: View {
                             actionButton("Photo", "photo.fill", .indigo) { quickCreate(.photo) }
                         }
 
+                        templatesSection
                         noteSection("Pinned Ideas", notes: Array(store.pinnedNotes.prefix(4)), empty: "Pin a note to keep it at the top.", icon: "pin.fill")
                         remindersSection
                         noteSection("Starred Ideas", notes: Array(store.starredNotes.prefix(4)), empty: "Star notes you want to revisit.", icon: "star.fill")
@@ -513,6 +635,60 @@ struct IceVaultActionView: View {
             .background(color.gradient, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
         }
         .pressScale()
+    }
+
+    private var templatesSection: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            HStack {
+                Text("Quick Templates")
+                    .font(.headline.weight(.black))
+                    .foregroundStyle(IceVaultTheme.ink)
+                Spacer()
+                Image(systemName: "wand.and.sparkles")
+                    .font(.subheadline.weight(.bold))
+                    .foregroundStyle(IceVaultTheme.primary)
+            }
+
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 10) {
+                    ForEach(IceVaultQuickTemplate.allCases) { template in
+                        Button {
+                            quickTemplate(template)
+                        } label: {
+                            VStack(alignment: .leading, spacing: 10) {
+                                Image(systemName: template.symbol)
+                                    .font(.system(size: 18, weight: .bold))
+                                    .foregroundStyle(.white)
+                                    .frame(width: 38, height: 38)
+                                    .background(template.tint.gradient, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                                Text(template.rawValue)
+                                    .font(.caption.weight(.black))
+                                    .foregroundStyle(IceVaultTheme.ink)
+                                    .lineLimit(2)
+                                    .multilineTextAlignment(.leading)
+                                    .frame(width: 104, alignment: .leading)
+                                Text(template.vaultName)
+                                    .font(.caption2.weight(.bold))
+                                    .foregroundStyle(template.tint)
+                                    .padding(.horizontal, 8)
+                                    .padding(.vertical, 5)
+                                    .background(template.tint.opacity(0.12), in: Capsule())
+                            }
+                            .padding(12)
+                            .frame(width: 132, height: 142, alignment: .topLeading)
+                            .background(Color.white.opacity(0.86), in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 18, style: .continuous)
+                                    .stroke(Color.white.opacity(0.72), lineWidth: 1)
+                            )
+                        }
+                        .buttonStyle(.plain)
+                    }
+                }
+            }
+        }
+        .padding(16)
+        .iceCard()
     }
 
     private func noteSection(_ title: String, notes: [IceVaultNote], empty: String, icon: String) -> some View {
